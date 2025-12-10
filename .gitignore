@@ -1,0 +1,11 @@
+#Ignore environment variables
+.env
+
+#Ignore pycaches
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+#Ignore logs
+*.log

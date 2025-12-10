@@ -1,0 +1,17 @@
+USER_GREETINGS = [
+    "hey",
+    "hi",
+    "hello",
+    "yo",
+    "sup",
+    "greetings",
+    "hiya",
+    "hey there",
+    "hello there",
+    "good morning",
+    "good evening",
+    "good eve",
+    "konnichiwa",
+    "konbanwa"
+    "good afternoon"
+]

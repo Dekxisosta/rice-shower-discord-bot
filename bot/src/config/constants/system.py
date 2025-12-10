@@ -1,0 +1,3 @@
+SYSTEM_NAME = "ライスシャワーBOT_SYS"
+VERSION = "0.0.1"
+

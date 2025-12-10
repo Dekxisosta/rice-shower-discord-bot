@@ -1,4 +1,15 @@
-# 🥕 Rice Shower Bot v 0.0.1
+<table width="100%">
+  <tr>
+    <td align="center" width="150">
+      <img src="rice-shower.png" alt="Status" width="150" height="150" />
+    </td>
+    <td align="left">
+      <pre>
+ █████▄  ▄▄  ▄▄▄▄ ▄▄▄▄▄   ▄█████ ▄▄ ▄▄  ▄▄▄  ▄▄   ▄▄ ▄▄▄▄▄ ▄▄▄▄    In early development!
+ ██▄▄██▄ ██ ██▀▀▀ ██▄▄    ▀▀▀▄▄▄ ██▄██ ██▀██ ██ ▄ ██ ██▄▄  ██▄█▄   ---------------------
+ ██   ██ ██ ▀████ ██▄▄▄   █████▀ ██ ██ ▀███▀  ▀█▀█▀  ██▄▄▄ ██ ██   version 0.0.1
+<strong> DISCORD BOT Made with Discord.py                                                     🥕</tr>
+</table>
 
 Rice Shower Bot is your all-in-one Discord companion, 
 featuring Uma Musume-inspired mini-games where you can train and race your horses, 

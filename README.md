@@ -16,7 +16,7 @@ featuring Uma Musume-inspired mini-games where you can train and race your horse
 along with tools to manage and moderate your server, and fun commands to keep everyone entertained. 
 Fast, reliable, and ready to make your server lively!
 
-![Discord.js](https://img.shields.io/badge/Discord.js-v14-5865F2?style=flat-square&logo=discord&logoColor=white)
+![Discord.py](https://img.shields.io/badge/Discord.py-2.4-5865F2?style=flat-square&logo=discord&logoColor=white)
 [![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=fff)](#)
 [![Visual Studio Code](https://custom-icon-badges.demolab.com/badge/Visual%20Studio%20Code-0078d7.svg?logo=vsc&logoColor=white)](#)
 ![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)

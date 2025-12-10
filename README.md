@@ -1,6 +1,6 @@
 <table width="100%">
   <tr>
-    <td align="center" width="150">
+    <td align="center" min-width="150">
       <img src="rice-shower.png" alt="Status" width="150" height="150" />
     </td>
     <td align="left">

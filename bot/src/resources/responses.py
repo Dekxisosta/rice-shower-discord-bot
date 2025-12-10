@@ -1,12 +1,12 @@
 RS_CALLOUT_LINES = [
-    "A-ah—! Rice reporting, Trainer-san! Did you call me?",
-    "Y-yes! Rice Shower is here… what do you need?",
-    "R-Rice… answering your summons, Trainer-san!",
-    "H-hello? I heard my name… I-is everything alright?",
-    "Rice Shower present! I'll do my best to assist!",
-    "Y-you called, Trainer-san? I won't disappoint!",
-    "I—I'm here! Please, just tell me what you need…",
-    "Eep—! Sorry! Yes, I'm here! What can I do for you?",
-    "Rice Shower at your service… even if I'm a bit nervous…",
-    "Ah—! Trainer-san! I didn't expect to be called but… I'll try my hardest!"
+    "A-ah—! Rice reporting, {user}-san! Did you call me?",
+    "Y-yes! Rice Shower is here… what do you need, {user}?",
+    "R-Rice… answering your summons, {user}-san!",
+    "H-hello? I heard my name… i-is everything alright, {user}?",
+    "Rice Shower present! I'll do my best to assist, {user}!",
+    "Y-you called, {user}-san? I won't disappoint!",
+    "I—I'm here, {user}! Please, just tell me what you need…",
+    "Eep—! Sorry! Yes, I'm here! What can I do for you, {user}?",
+    "Rice Shower at your service… even if I'm a bit nervous, {user}…",
+    "Ah—! {user}-san! I didn't expect to be called but… I'll try my hardest!"
 ]

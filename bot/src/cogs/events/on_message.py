@@ -16,9 +16,9 @@ class OnMessage(commands.Cog):
         
         if "rice shower" in content and any(g in content for g in USER_GREETINGS):
             if db.callout_line_count >= len(RS_CALLOUT_LINES):
-                db.callout_line_count+=1
+                db.callout_line_count=0
 
-            await msg.channel.send(RS_CALLOUT_LINES[db.callout_line_count])
+            await msg.channel.send(RS_CALLOUT_LINES[db.callout_line_count].format(user = msg.author.mention))
 
             db.callout_line_count += 1
 

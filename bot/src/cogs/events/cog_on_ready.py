@@ -1,5 +1,4 @@
 from discord.ext import commands
-from resources import responses
 from utils.console_logger import log
 class OnReady(commands.Cog):
     def __init__(self, bot):

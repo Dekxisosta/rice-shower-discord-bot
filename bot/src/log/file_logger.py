@@ -1,4 +1,4 @@
-from config.directories import LOGGING_FILE_PATH
+from config.paths.file_paths import LOGGING_FILE_PATH
 import logging
 import os
 

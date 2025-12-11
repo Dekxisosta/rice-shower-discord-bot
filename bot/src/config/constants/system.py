@@ -1,3 +1,3 @@
-SYSTEM_NAME = "ライスシャワーBOT_SYS"
+SYSTEM_NAME = "ライス"
 VERSION = "0.0.1"
 

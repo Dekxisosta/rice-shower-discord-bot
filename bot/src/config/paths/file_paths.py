@@ -1,0 +1,1 @@
+LOGGING_FILE_PATH = "./bot/src/log/discord.log"

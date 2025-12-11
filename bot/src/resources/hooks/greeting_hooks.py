@@ -1,4 +1,4 @@
-USER_GREETINGS = [
+HOOKS = [
     "hey",
     "hi",
     "hello",

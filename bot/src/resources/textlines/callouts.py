@@ -1,4 +1,5 @@
-RS_CALLOUT_LINES = [
+# RICE SHOWER TAILORED CALLOUT TEXTLINES
+LINES = [
     "A-ah—! Rice reporting, {user}-san! Did you call me?",
     "Y-yes! Rice Shower is here… what do you need, {user}?",
     "R-Rice… answering your summons, {user}-san!",

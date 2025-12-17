@@ -1,5 +1,7 @@
 from discord.ext import commands
 from utils.console_logger import log
+import discord
+
 class OnReady(commands.Cog):
     def __init__(self, bot):
         self.bot = bot

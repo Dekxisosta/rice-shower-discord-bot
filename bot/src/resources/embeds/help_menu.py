@@ -1,51 +1,33 @@
+from pathlib import Path
+from resources.descriptions.general_command_desc import DESC
+from config.constants.defaults import DEFAULT_PREFIX
 import discord
-def rice_menu_embed():
+
+# Path to PNG folder
+PNG_DIR = Path(__file__).parent.parent / "pngs"
+
+def get_embed():
+    banner_file = discord.File(PNG_DIR / "commands_banner.png", filename="commands_banner.png")
+    icon_file = discord.File(PNG_DIR / "profile.png", filename="profile.png")
+
+    banner_embed = discord.Embed(
+        color=discord.Color.dark_magenta()
+    )
+    banner_embed.set_image(url="attachment://commands_banner.png")
+    banner_embed.set_footer(
+        text="Rice Bot • v0.3 • Found a bug? Contact rroquxii@gmail.com",
+        icon_url="attachment://profile.png"
+    )
+
     embed = discord.Embed(
-        title="🐴 Rice Shower Command List",
+        title="🌾 **Rice Shower Bot Commands**",
         description="Here are all the things Rice can help you with, Trainer-san!",
-        color=discord.Color.blue()
+        color=discord.Color.dark_magenta()
     )
 
-    embed.add_field(
-        name="💠 Greeting",
-        value="`!rice greet` — Rice shyly responds to your call.",
-        inline=False
-    )
+    for cmd_name, cmd_desc in DESC.items():
+        if cmd_name == "main":
+            continue
+        embed.add_field(name=f"```🥕/{cmd_name} | {DEFAULT_PREFIX}{cmd_name}```", value=cmd_desc, inline=True)
 
-    embed.add_field(
-        name="⏳ Timer",
-        value="`!rice timer <seconds>` — Starts a countdown timer.",
-        inline=False
-    )
-
-    embed.add_field(
-        name="🎭 Mood",
-        value="`!rice mood` — Shows Rice’s current emotional state… nervously.",
-        inline=False
-    )
-
-    embed.add_field(
-        name="🎐 Joke",
-        value="`!rice joke` — Rice attempts to… humor you?",
-        inline=False
-    )
-
-    embed.add_field(
-        name="🏇 Training",
-        value="`!rice train` — Train Rice to improve her stats!",
-        inline=False
-    )
-
-    embed.add_field(
-        name="📘 Help",
-        value="`!rice help` — Shows this help menu.",
-        inline=False
-    )
-
-    embed.set_footer(text="Have fun with Rice Shower! 💙")
-    embed.set_thumbnail(url="https://i.imgur.com/2RZ9oAv.png") 
-
-    return embed
-
-
-RICE_MENU_EMBED = rice_menu_embed()
+    return [banner_embed, embed], [banner_file, icon_file]  # return the embed and list of files to send

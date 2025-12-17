@@ -1,0 +1,28 @@
+# RICE SHOWER LIFE & ROMANCE QUOTES (EXPANDED, CANON-INSPIRED)
+LINES = [
+    "U-Um… even if life feels scary… I think it's okay to keep walking… 💐",
+    "H-hello… love isn't loud, b-but I believe it can be very warm… 💕",
+    "I-I think… living gently is its own kind of courage…",
+    "U-Um… if someone stays beside you… th-that's already a miracle… 💐",
+    "H-hearts can get hurt… b-but that means they're real…",
+    "I-I believe… loving someone means wishing for their happiness… even quietly… 💕",
+    "U-Um… even sad days are proof that we tried our best to live…",
+    "H-hello… I think romance is when you feel safe just being yourself… 💐",
+    "I-I don't need grand things… j-just someone who understands me… 💕",
+    "U-Um… if you keep going… I'll quietly cheer for you from here…",
+    "U-Um… people used to fear me… b-but I still want to believe in happiness… 💐",
+    "H-hello… even if I'm called unlucky… I want to keep running forward…",
+    "I-I thought… maybe love is choosing to stay kind, even when it hurts… 💕",
+    "U-Um… I don't want to steal happiness anymore… I want to grow my own… 💐",
+    "H-hearing someone say my name kindly… th-that alone makes my heart race…",
+    "I-I run not to curse anyone… b-but to prove I deserve to be happy too…",
+    "U-Um… romance feels scary… because losing it would hurt so much… 💕",
+    "H-hello… if fate is cruel… then I'll face it gently, step by step…",
+    "I-I think… being loved means someone sees your thorns… and stays anyway… 💐",
+    "U-Um… even if I stumble… I'll stand up again, for myself…",
+    "H-hearts like mine… might be fragile… b-but they're very sincere… 💕",
+    "I-I used to think wishing was wrong… now I wish for tomorrow too…",
+    "U-Um… loving someone quietly… feels a little like running at night… 💐",
+    "H-hello… if you believe in me… I think I can believe in myself… 💕",
+    "I-I don't want miracles… j-just a future where I'm allowed to smile…"
+]

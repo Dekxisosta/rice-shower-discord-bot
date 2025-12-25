@@ -1,7 +1,7 @@
 <table width="100%">
   <tr>
     <td align="center" min-width="150">
-      <img src="rice-shower.png" alt="Status" width="150" height="150" />
+      <img src="readme-assets/rice-shower.png" alt="Status" width="150" height="150" />
     </td>
     <td align="left">
       <pre>
@@ -28,7 +28,7 @@ Designed for easy extension with commands and events, centralized logging, and a
 Currently in early development; some package structure and features may change as the project evolves.
 
 
-![What's New Banner](./whats-new_banner.png)
+![What's New Banner](./readme-assets/whats-new_banner.png)
 | Feature | Description |
 |---------|-------------|
 | **Autoloader System** | Automatically loads commands and events from designated folders. Add new functionality simply by creating a file—no need to modify core bot code. Perfect for modular development and quick iteration. |

@@ -1,6 +1,6 @@
 from discord import app_commands
 from discord.ext import commands
-from resources.descriptions.utility_command_desc import DESC
+from bot.src.resources.descriptions.utility_desc import DESC
 
 class Utility(commands.Cog):
     def __init__(self, bot):

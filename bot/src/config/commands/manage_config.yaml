@@ -1,0 +1,15 @@
+main: "Rice helps manage roles, channels, and server settings…!"
+prefix: "manage"
+
+commands:
+    add-role: ""
+    remove-role: ""
+    info-role: ""
+
+    create-tag: ""
+    send-tag: ""
+
+    nickname: ""
+    announce: ""
+    pin: ""
+    poll: ""

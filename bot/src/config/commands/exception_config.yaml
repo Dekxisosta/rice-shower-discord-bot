@@ -1,0 +1,3 @@
+invalid_command: "Unable to perform command for command. Check `!{prefix} help` or `/{prefix} help` for available commands!"
+missing_argument: "You forgot to provide an argument for `{command}`!"
+no_permission: "You do not have permission to use `{command}`."

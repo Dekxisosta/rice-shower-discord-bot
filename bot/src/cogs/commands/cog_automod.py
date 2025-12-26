@@ -1,6 +1,6 @@
 from discord import app_commands
 from discord.ext import commands
-from resources.descriptions.automod_command_desc import DESC
+from bot.src.resources.descriptions.automod_desc import DESC
 
 class Automod(commands.Cog):
     def __init__(self, bot):

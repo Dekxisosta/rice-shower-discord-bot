@@ -8,46 +8,28 @@ class General(commands.Cog):
 
     @commands.hybrid_group(name="rs", invoke_without_command=True, with_app_command=True)
     async def rs(self, ctx):
-        await ctx.send("Use `rs greet`")
+        await ctx.send(f"")
 
-    # ===============---------
-    # Greet
-    # ===============---------
     @rs.command(name="greet", description=DESC["greet"])
     async def greet(self, ctx: commands.Context):
         await general.greet(ctx=ctx)
 
-    # ===============---------
-    # Help
-    # ===============---------
     @rs.command(name="help", description=DESC["help"])
     async def help(self, ctx: commands.Context):
         await general.help(ctx=ctx)
 
-    # ===============---------
-    # Ping
-    # ===============---------
     @rs.command(name="ping", description=DESC["ping"])
     async def ping(self, ctx: commands.Context):
         await general.ping(self.bot, ctx=ctx)
 
-    # ===============---------
-    # Info
-    # ===============---------
     @rs.command(name="info", description=DESC["info"])
     async def info(self, ctx: commands.Context):
         await general.info(ctx=ctx)
 
-    # ===============---------
-    # Quote
-    # ===============---------
     @rs.command(name="quote", description=DESC["quote"])
     async def quote(self, ctx: commands.Context):
         await general.quote(ctx=ctx)
 
-    # ===============---------
-    # Say
-    # ===============---------
     @rs.command(name="say", description=DESC["say"])
     async def say(self, ctx: commands.Context, msg: str):
         await general.say(msg, ctx=ctx)

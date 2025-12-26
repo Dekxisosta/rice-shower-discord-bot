@@ -1,3 +1,0 @@
-SYSTEM_NAME = "ライス"
-VERSION = "0.0.1"
-

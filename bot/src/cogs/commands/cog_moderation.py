@@ -1,6 +1,6 @@
 from discord import app_commands
 from discord.ext import commands
-from resources.descriptions.mod_command_desc import DESC
+from bot.src.resources.descriptions.mod_desc import DESC
 
 class Moderation(commands.Cog):
     def __init__(self, bot):

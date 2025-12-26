@@ -1,4 +1,9 @@
 from discord.ext import commands
+from config import commands as configs
+
+import yaml
+with open ("config/commands/configs")
+
 from resources.embeds.help_menu import get_embed
 from resources.textlines.greetings import LINES as greetings
 from resources.textlines.quotes import LINES as quotes

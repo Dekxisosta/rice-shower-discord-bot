@@ -1,0 +1,11 @@
+main: "Rice can show helpful info about users, the server, and more…!"
+prefix: "info"
+
+commands:
+    userinfo: ""
+    serverinfo: ""
+    channelinfo: ""
+    roleinfo: ""
+    avatar: ""
+    banner: ""
+    emojis: ""

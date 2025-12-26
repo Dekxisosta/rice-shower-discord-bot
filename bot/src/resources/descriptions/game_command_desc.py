@@ -1,3 +1,0 @@
-DESC = {
-    "main": "Rice can play simple games with you…! I-I’ll try my best…!"
-}

@@ -1,6 +1,11 @@
-from config.paths.file_paths import LOGGING_FILE_PATH
+import yaml
 import logging
 import os
+
+with open("config/file_paths.yaml", "r") as file_paths:
+    data = yaml.safe_load(file_paths)
+
+LOGGING_FILE_PATH = file_paths["logging"]
 
 os.makedirs(os.path.dirname(LOGGING_FILE_PATH), exist_ok=True)
 

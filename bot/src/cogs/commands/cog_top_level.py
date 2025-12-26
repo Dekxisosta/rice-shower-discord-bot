@@ -1,0 +1,19 @@
+from discord.ext import commands
+from bot.src.core.commands import top_level
+
+class TopLevel(commands.Cog):
+    def __init__(self, bot):
+        self.bot = bot
+
+    @commands.command(name="help")
+    async def help(self, ctx: commands.Context):
+        await top_level.help(ctx)
+
+    @commands.command(name="sync")
+    @commands.is_owner()
+    @commands.guild_only()
+    async def sync(self, ctx: commands.Context):
+        await top_level.sync(ctx)
+
+async def top_level(bot):
+    await bot.add_cog(TopLevel(bot))

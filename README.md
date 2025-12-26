@@ -7,7 +7,7 @@
       <pre>
  █████▄  ▄▄  ▄▄▄▄ ▄▄▄▄▄   ▄█████ ▄▄ ▄▄  ▄▄▄  ▄▄   ▄▄ ▄▄▄▄▄ ▄▄▄▄    In early development!
  ██▄▄██▄ ██ ██▀▀▀ ██▄▄    ▀▀▀▄▄▄ ██▄██ ██▀██ ██ ▄ ██ ██▄▄  ██▄█▄   ---------------------
- ██   ██ ██ ▀████ ██▄▄▄   █████▀ ██ ██ ▀███▀  ▀█▀█▀  ██▄▄▄ ██ ██   version 0.0.2
+ ██   ██ ██ ▀████ ██▄▄▄   █████▀ ██ ██ ▀███▀  ▀█▀█▀  ██▄▄▄ ██ ██   version 0.0.12
 <strong> DISCORD BOT made with Discord.py                                                     🥕</tr>
 </table>
 
@@ -33,5 +33,7 @@ Currently in early development; some package structure and features may change a
 |---------|-------------|
 | **Autoloader System** | Automatically loads commands and events from designated folders. Add new functionality simply by creating a file—no need to modify core bot code. Perfect for modular development and quick iteration. |
 | **Centralized Logging** | Key bot events—like startup, loaded modules, and command execution—are printed to the console, while all activity, including Discord’s internal logs, is written directly to a log file. This ensures important runtime information is visible immediately, while detailed logs are preserved for debugging, monitoring, and auditing. |
-| **Customizable Configuration** | Easily configure command prefixes, intents, tokens, and logging behavior via centralized settings. Supports multiple environments with minimal changes. |
+| **Customizable Configuration** | Easily configure command prefixes, intents, tokens, and logging behavior via a **centralized YAML file**. Supports multiple environments with minimal changes. |
 | **Extensible Utilities** | Includes helper modules for logging, autoloading, and other common tasks, making it easy to build additional features or integrate external APIs. |
+| **Persistent User Data** | Uses **SQLite** to store user-related information, allowing commands and events to read and write persistent data efficiently, without requiring an external database server. |
+

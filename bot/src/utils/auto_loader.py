@@ -1,7 +1,6 @@
 import os
 from discord.ext import commands
-from datetime import datetime
-from config.system_details import SYSTEM_NAME
+from utils.console_logger import log
 
 async def autoload_folder(bot: commands.Bot, folder_path: str, package_prefix: str):
     folder_abs = os.path.abspath(folder_path)

@@ -1,4 +1,5 @@
 from discord.ext import commands
+from config.bot_defaults import DEFAULT_PREFIX
 from datastore.static_data import config
 from core.commands import general
 
@@ -16,7 +17,12 @@ class General(commands.Cog):
 
     @prefix.command(name="help", description=config["general"]["commands"]["help"]["desc"])
     async def help(self, ctx: commands.Context):
-        await general.help(ctx=ctx)
+        await general.help(
+            ctx=ctx, 
+            bot_prefix=DEFAULT_PREFIX, 
+            group_prefix=config["general"]["prefix"], 
+            desc=config["general"]["desc"],
+            commands= config["general"]["commands"])
 
     @prefix.command(name="ping", description=config["general"]["commands"]["ping"]["desc"])
     async def ping(self, ctx: commands.Context):

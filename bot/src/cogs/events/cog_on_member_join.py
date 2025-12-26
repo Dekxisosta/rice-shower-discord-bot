@@ -1,5 +1,5 @@
 from discord.ext import commands
-from data import session_data as db
+# from data import session_data as db
 
 class OnMemberJoin(commands.Cog):
     def __init__(self, bot):

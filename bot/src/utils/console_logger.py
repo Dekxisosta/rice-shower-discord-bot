@@ -1,4 +1,5 @@
-
+from datetime import datetime
+from config.system_details import SYSTEM_NAME
 
 def log(message: str, module_name: str = "N/A", success: bool = True):
     now = datetime.now()

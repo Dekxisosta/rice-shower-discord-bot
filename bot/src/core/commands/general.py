@@ -10,8 +10,8 @@ async def greet(ctx: commands.Context, greetings: list[str]):
         await ctx.send(random.choice(greetings))
         
 # Help Command : Shows a list of available commands
-async def help(ctx: commands.Context, bot_prefix: str, group_prefix: str, commands: dict):
-    embeds, files = help_embed.create(bot_prefix = bot_prefix, group_prefix=group_prefix, commands=commands)
+async def help(ctx: commands.Context, bot_prefix: str, group_prefix: str, desc:str, commands: dict):
+    embeds, files = help_embed.create(bot_prefix = bot_prefix, group_prefix=group_prefix, desc=desc, commands=commands)
         
     if ctx.interaction is not None:
         await ctx.interaction.response.defer()

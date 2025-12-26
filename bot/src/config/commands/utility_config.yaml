@@ -1,13 +1,22 @@
-main: "U-um… Rice can help with small tasks and useful tools…!"
+desc: "U-um… Rice can help with small tasks and useful tools…!"
 prefix: "util"
 
 commands:
-    remind: ""
-    timer: ""
-    translate: ""
-    color: ""
-    suggest: ""
-    report: ""
-    quote: ""
-    todo: ""
-    roll: ""
+    remind: 
+        desc: ""
+    timer: 
+        desc: ""
+    translate: 
+        desc: ""
+    color: 
+        desc: ""
+    suggest: 
+        desc: ""
+    report: 
+        desc: ""
+    quote: 
+        desc: ""
+    todo: 
+        desc: ""
+    roll: 
+        desc: ""

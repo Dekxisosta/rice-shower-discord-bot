@@ -1,14 +1,24 @@
-main: "Rice will gently help keep the server safe from trouble…!"
+desc: "Rice will gently help keep the server safe from trouble…!"
 prefix: "mod"
 
 commands:
-  kick: ""
-  ban: ""
-  unban: ""
-  timeout: ""
-  warn: ""
-  warnings: ""
-  purge: ""
-  lock: ""
-  unlock: ""
-  slowmode: ""
+  kick:
+    desc: ""
+  ban:
+    desc: ""
+  unban: 
+    desc: ""
+  timeout: 
+    desc: ""
+  warn: 
+    desc: ""
+  warnings: 
+    desc: ""
+  purge: 
+    desc: ""
+  lock: 
+    desc: ""
+  unlock: 
+    desc: ""
+  slowmode: 
+    desc: ""

@@ -1,6 +1,6 @@
 from discord import app_commands
 from discord.ext import commands
-from bot.src.resources.descriptions.info_desc import DESC
+from datastore.static_data import config
 
 class Information(commands.Cog):
     def __init__(self, bot):
@@ -8,7 +8,7 @@ class Information(commands.Cog):
 
     information = app_commands.Group(
         name="information", 
-        description= DESC["main"]
+        description= config["info"]["desc"]
     )
 
 async def setup(bot):

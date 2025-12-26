@@ -1,11 +1,10 @@
 from pathlib import Path
-from config import commands
 import discord
 
 # Path to PNG folder
 PNG_DIR = Path(__file__).parent.parent / "pngs"
 
-def get_embed():
+def create(bot_prefix:str, group_prefix: str, commands: dict):
     banner_file = discord.File(PNG_DIR / "commands_banner.png", filename="commands_banner.png")
     icon_file = discord.File(PNG_DIR / "profile.png", filename="profile.png")
 
@@ -24,9 +23,9 @@ def get_embed():
         color=discord.Color.dark_magenta()
     )
 
-    for cmd_name, cmd_desc in DESC.items():
+    for cmd_name, cmd_desc in commands.items():
         if cmd_name == "main":
             continue
-        embed.add_field(name=f"```🥕/{cmd_name} | {DEFAULT_PREFIX}{cmd_name}```", value=cmd_desc, inline=True)
+        embed.add_field(name=f"```🥕/{group_prefix} {cmd_name} | {bot_prefix}{group_prefix} {cmd_name}```", value=cmd_desc, inline=True)
 
     return [banner_embed, embed], [banner_file, icon_file]  # return the embed and list of files to send

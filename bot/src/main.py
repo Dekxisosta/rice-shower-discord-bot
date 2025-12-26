@@ -2,10 +2,12 @@ import logging
 import log.file_logger as file_logger
 import utils.auto_loader as loader
 from discord.ext import commands
-from bot.src.config.bot_defaults import DEFAULT_PREFIX, DEFAULT_TOKEN, DEFAULT_INTENTS
-from config.paths import folder_paths
+from config.bot_defaults import DEFAULT_PREFIX, DEFAULT_TOKEN, DEFAULT_INTENTS
+from config.directories import COMMANDS_FOLDER_PATH, EVENTS_FOLDER_PATH
+from bootstrapper import config_loader
 
 logging.getLogger("discord").handlers = file_logger.setup_logger(logging.DEBUG).handlers
+config_loader.load()
 
 bot = commands.Bot(
     intents=DEFAULT_INTENTS, 
@@ -15,8 +17,8 @@ bot = commands.Bot(
 
 @bot.event
 async def setup_hook():
-    await loader.autoload_folder(bot, folder_path=folder_paths.COMMANDS_FOLDER_PATH, package_prefix="cogs.commands")
-    await loader.autoload_folder(bot, folder_path=folder_paths.EVENTS_FOLDER_PATH, package_prefix="cogs.events")
+    await loader.autoload_folder(bot, folder_path=COMMANDS_FOLDER_PATH, package_prefix="cogs.commands")
+    await loader.autoload_folder(bot, folder_path=EVENTS_FOLDER_PATH, package_prefix="cogs.events")
     await bot.tree.sync()
 
 if __name__ == "__main__":

@@ -1,6 +1,6 @@
 from discord import app_commands
 from discord.ext import commands
-from bot.src.resources.descriptions.automod_desc import DESC
+from datastore.static_data import config
 
 class Automod(commands.Cog):
     def __init__(self, bot):
@@ -8,7 +8,7 @@ class Automod(commands.Cog):
 
     automod = app_commands.Group(
         name="automod", 
-        description= DESC["main"]
+        description= config["automod"]["desc"]
     )
 
 async def setup(bot):

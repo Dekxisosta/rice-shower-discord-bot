@@ -1,11 +1,16 @@
-main: "Rice quietly blocks spam, bad links, and dangerous activity…!"
+desc: "Rice quietly blocks spam, bad links, and dangerous activity…!"
 prefix: "automod"
 
 commands:
-    summary: ""
-
-    add-filter: ""
-    remove-filter: ""
-    toggle-anti-spam: ""
-    toggle-anti-link: ""
-    toggle-anti-raid: ""
+    summary:
+        desc: ""
+    add-filter:
+        desc: ""
+    remove-filter:
+        desc: ""
+    toggle-anti-spam: 
+        desc: ""
+    toggle-anti-link: 
+        desc: ""
+    toggle-anti-raid: 
+        desc: ""

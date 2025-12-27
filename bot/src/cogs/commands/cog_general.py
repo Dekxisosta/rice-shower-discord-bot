@@ -7,38 +7,100 @@ class General(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
-    @commands.hybrid_group(name=config["general"]["prefix"], invoke_without_command=True, with_app_command=True)
-    async def prefix(self, ctx):
-        await ctx.send(config["exception"]["invalid_command"])
-
-    @prefix.command(name="greet", description=config["general"]["commands"]["greet"]["desc"])
+    @commands.hybrid_command(
+        name="greet", 
+        description=config["general"]["commands"]["greet"]["desc"]
+    )
     async def greet(self, ctx: commands.Context):
-        await general.greet(ctx=ctx, greetings=config["general"]["commands"]["greet"]["textlines"])
+        await general.greet(
+            ctx=ctx, 
+            greetings=config["general"]["commands"]["greet"]["textlines"]
+        )
 
-    @prefix.command(name="help", description=config["general"]["commands"]["help"]["desc"])
+    @commands.hybrid_command(
+        name="help", 
+        description=config["general"]["commands"]["help"]["desc"]
+    )
     async def help(self, ctx: commands.Context):
         await general.help(
             ctx=ctx, 
             bot_prefix=DEFAULT_PREFIX, 
-            group_prefix=config["general"]["prefix"], 
             desc=config["general"]["desc"],
-            commands= config["general"]["commands"])
+            commands=config["general"]["commands"]
+        )
 
-    @prefix.command(name="ping", description=config["general"]["commands"]["ping"]["desc"])
+    @commands.hybrid_command(
+        name="ping", 
+        description=config["general"]["commands"]["ping"]["desc"]
+    )
     async def ping(self, ctx: commands.Context):
-        await general.ping(self.bot, ctx=ctx)
+        await general.ping(
+            self.bot, 
+            ctx=ctx, 
+            format=config["general"]["commands"]["ping"]["format"]
+        )
 
-    @prefix.command(name="info", description=config["general"]["commands"]["info"]["desc"])
+    @commands.hybrid_command(
+        name="info", 
+        description=config["general"]["commands"]["info"]["desc"]
+    )
     async def info(self, ctx: commands.Context):
-        await general.info(ctx=ctx, info=config["general"]["commands"]["info"]["text"])
+        await general.info(
+            ctx=ctx, 
+            info=config["general"]["commands"]["info"]["text"]
+        )
 
-    @prefix.command(name="quote", description=config["general"]["commands"]["quote"]["desc"])
+    @commands.hybrid_command(name="quote", description=config["general"]["commands"]["quote"]["desc"])
     async def quote(self, ctx: commands.Context):
-        await general.quote(ctx=ctx, quotes=config["general"]["commands"]["quote"]["textlines"])
+        await general.quote(
+            ctx=ctx, 
+            quotes=config["general"]["commands"]["quote"]["textlines"]
+        )
 
-    @prefix.command(name="say", description=config["general"]["commands"]["say"]["desc"])
-    async def say(self, ctx: commands.Context, msg: str):
+    @commands.hybrid_command(name="umaline", description=config["general"]["commands"]["umaline"]["desc"])
+    async def umaline(self, ctx: commands.Context):
+        await general.umaline(
+            ctx=ctx, 
+            textlines=config["general"]["commands"]["umaline"]["textlines"]
+        )
+
+    @commands.hybrid_command(name="say", description=config["general"]["commands"]["say"]["desc"])
+    async def say(self, ctx: commands.Context, *, msg: str):
         await general.say(ctx=ctx, msg=msg)
 
+    @commands.hybrid_command(name="roll", description=config["general"]["commands"]["roll"]["desc"])
+    async def roll(self, ctx: commands.Context):
+        await general.roll(
+            ctx=ctx, 
+            format=config["general"]["commands"]["roll"]["format"]
+        )
+
+    @commands.hybrid_command(name="8ball", description=config["general"]["commands"]["8ball"]["desc"])
+    async def eightBall(self, ctx: commands.Context, *, question: str):
+        await general.eightBall(
+            ctx=ctx, 
+            question=question, 
+            formatQuestion=config["general"]["commands"]["8ball"]["format-question"],
+            formatResponse=config["general"]["commands"]["8ball"]["format-response"],
+            responses=config["general"]["commands"]["8ball"]["textlines"]
+        )
+
+    @commands.hybrid_command(name="coinflip", description=config["general"]["commands"]["coinflip"]["desc"])
+    async def coinflip(self, ctx: commands.Context):
+        await general.coinflip(
+            ctx=ctx, 
+            format=config["general"]["commands"]["coinflip"]["format"]
+        )
+
+    @commands.hybrid_command(name="choose", description=config["general"]["commands"]["choose"]["desc"])
+    async def choose(self, ctx: commands.Context, *, choices: str):
+        await general.choose(
+            ctx=ctx,
+            input=choices,
+            format=config["general"]["commands"]["choose"]["format"],
+            fallback=config["general"]["commands"]["choose"]["fallback"],
+            usage=config["general"]["commands"]["choose"]["usage"]
+        )
+    
 async def setup(bot):
     await bot.add_cog(General(bot))

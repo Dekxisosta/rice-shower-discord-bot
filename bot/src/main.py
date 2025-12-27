@@ -23,7 +23,7 @@ async def setup_hook():
 
 if __name__ == "__main__":
     bot.run(
-        DEFAULT_TOKEN,
+        DEFAULT_TOKEN, #type: ignore
         log_handler=None,
         log_level=logging.DEBUG,
     )

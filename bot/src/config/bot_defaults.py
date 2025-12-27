@@ -11,6 +11,6 @@ def get_intents():
     intents.members = True
     return intents
 
-DEFAULT_PREFIX = "!"
+DEFAULT_PREFIX = "rs!"
 DEFAULT_TOKEN = load_token()
 DEFAULT_INTENTS = get_intents()

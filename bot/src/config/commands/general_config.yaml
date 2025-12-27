@@ -40,7 +40,7 @@ commands:
 
     ping: 
         desc: "Checks Rice's response time to see if she's fast enough…!"
-
+        format: "P-pong! 🏓 Latency is {0}ms."
     info: 
         desc: "Provides information about Rice Shower bot and her features…!"
         text: "Rice Shower is a friendly server bot that only supports general commands for now"
@@ -68,6 +68,51 @@ commands:
             - "Your effort... really matters... 💛"
             - "It's okay to feel unsure... just don't give up... 🌸"
             - "I'll... keep cheering for you... always... 🌹"
-
+    umaline:
+        desc: "Makes Rice say a random in-game line...!"
+        textlines:
+            - "🥕 Whenever I try to cross the street, the walk signal always turns red... That's why I try not to walk beside anybody else."
+            - "🥕 I wonder why Maruzen invites me on drives... We even got stuck in a traffic jam last time... She's so kind..."
+            - "🥕 You know, I don't... hate everything about myself anymore."
+            - "🥕 B-Big Brother! Um, it looks like there might be a new notice!"
+            - "🥕 When I clean today, I'll try not to spill any water... That way, everyone won't slip!"
+            - "🥕 H-huh? Bakushin O was there just a second ago... Is this the 'power of the Bakushin' she mentioned?"
+            - "🥕 Tonight is the night I'm going to tell Rob Roy, \"I like that book too.\"... T-tonight is the night!"
+            - "🥕 Everyday, little by little, I'm getting closer to becoming the me I want to be... I think."
+            - "🥕 Ow... Since I'm wearing this outfit, I thought I'd try walking without looking down, but I bumped my knee..."
     say: 
         desc: "Makes Rice repeat whatever you tell her to say…!"
+
+    roll:
+        desc: "Makes Rice roll a die and tell you the result!"
+        format: "Rolled {0}!"
+
+    8ball:
+        desc: "Ask Rice a question, and she'll answer with her honest feelings…!"
+        format-response: "🥕Response: {0}"
+        format-question: "❓Question: {0}"
+        textlines:
+            # Positive
+            - "Yes..!"
+            - "Most likely..!"
+            - "Definitely..!"
+
+            # Neutral
+            - "Ask again later… I'll try to know more!"
+            - "Hmm… I'm not sure yet."
+            - "Cannot predict now… but I'll try!"
+
+            # Negative
+            - "No, I can't guarantee that!"
+            - "Very doubtful…"
+            - "Don't count on it…"
+    coinflip:
+        desc: "Rice flips a coin and tells you the result!"
+        format: "It landed on {0}!"
+
+    choose:
+        desc: "Let Rice choose between multiple options for you!"
+        usage: "!choose option 1, option 2 | option 3"
+        fallback: "Um… I need at least two options to choose from!"
+        format: "I think I'll pick **{0}**!"
+        

@@ -19,7 +19,6 @@ bot = commands.Bot(
 async def setup_hook():
     await loader.autoload_folder(bot, folder_path=COMMANDS_FOLDER_PATH, package_prefix="cogs.commands")
     await loader.autoload_folder(bot, folder_path=EVENTS_FOLDER_PATH, package_prefix="cogs.events")
-    await bot.tree.sync()
 
 if __name__ == "__main__":
     bot.run(

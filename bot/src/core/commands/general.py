@@ -1,5 +1,7 @@
 from discord.ext import commands
 from assets.embeds.help import help_group as help_embed
+from ui.page_view import PageView
+from discord.ext import commands
 
 # Greet Command : Randomly picks a greeting line
 async def greet(ctx: commands.Context, greetings: list[str]):
@@ -8,16 +10,6 @@ async def greet(ctx: commands.Context, greetings: list[str]):
         await ctx.interaction.response.send_message(random.choice(greetings))
     else:
         await ctx.send(random.choice(greetings))
-        
-# Help Command : Shows a list of available commands
-async def help(ctx: commands.Context, bot_prefix: str, desc:str, commands: dict):
-    embed= help_embed.create(bot_prefix = bot_prefix, desc=desc, commands=commands)
-        
-    if ctx.interaction is not None:
-        await ctx.interaction.response.defer()
-        await ctx.interaction.followup.send(embed=embed, ephemeral=True)
-    else:
-        await ctx.send(embeds=embed)
 
 # Ping Command : Shows Rice Shower's response time
 async def ping(bot, ctx: commands.Context, format: str):
@@ -101,6 +93,36 @@ async def choose(ctx:commands.Context, input: str, format: str, fallback: str, u
         await ctx.interaction.response.send_message(msg)
     else:
         await ctx.send(msg)
+
+# Help Command : Shows a list of available commands
+async def help(ctx: commands.Context, bot_prefix: str, config: dict):
+    embeds = [
+        help_embed.create(
+            bot_prefix=bot_prefix,
+            desc=config["general"]["desc"],
+            commands=config["general"]["commands"],
+        ),
+        help_embed.create(
+            bot_prefix=bot_prefix,
+            desc=config["mod"]["desc"],
+            commands=config["mod"]["commands"],
+            group_prefix=config["mod"]["prefix"]
+        ),
+        help_embed.create(
+            bot_prefix=bot_prefix,
+            desc=config["automod"]["desc"],
+            commands=config["automod"]["commands"],
+            group_prefix=config["automod"]["prefix"]
+        )
+    ]
+    
+    view = PageView(embeds)
+
+    if ctx.interaction is not None:
+        await ctx.interaction.response.defer()
+        await ctx.interaction.followup.send(embed=embeds[0], view=view, ephemeral=True)
+    else:
+        await ctx.send(embed=embeds[0], view=view)
 
 
 

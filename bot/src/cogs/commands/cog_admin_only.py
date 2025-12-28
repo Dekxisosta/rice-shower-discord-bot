@@ -1,15 +1,15 @@
 from discord.ext import commands
-from core.commands import top_level
+from core.commands import admin_only
 
 class TopLevel(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
     @commands.command(name="sync")
-    @commands.is_owner()
+    @commands.has_permissions(administrator=True, manage_guild=True)
     @commands.guild_only()
     async def sync(self, ctx: commands.Context):
-        await top_level.sync(self.bot, ctx)
+        await admin_only.sync(self.bot, ctx)
 
 async def setup(bot):
     await bot.add_cog(TopLevel(bot))

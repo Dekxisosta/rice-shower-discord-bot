@@ -1,21 +1,5 @@
-import discord
 from discord.ext import commands
-
-class PageView(discord.ui.View):
-    def __init__(self, pages):
-        super().__init__(timeout=None)
-        self.pages = pages
-        self.current = 0
-
-    @discord.ui.button(label="<", style=discord.ButtonStyle.primary)
-    async def previous(self, interaction: discord.Interaction, button: discord.ui.Button):
-        self.current = (self.current - 1) % len(self.pages)
-        await interaction.response.edit_message(content=self.pages[self.current], view=self)
-
-    @discord.ui.button(label=">", style=discord.ButtonStyle.primary)
-    async def next(self, interaction: discord.Interaction, button: discord.ui.Button):
-        self.current = (self.current + 1) % len(self.pages)
-        await interaction.response.edit_message(content=self.pages[self.current], view=self)
+from ui.page_view import PageView
 
 class NavigationCog(commands.Cog):
     def __init__(self, bot):

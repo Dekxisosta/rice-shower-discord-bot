@@ -25,8 +25,7 @@ class General(commands.Cog):
         await general.help(
             ctx=ctx, 
             bot_prefix=DEFAULT_PREFIX, 
-            desc=config["general"]["desc"],
-            commands=config["general"]["commands"]
+            config=config
         )
 
     @commands.hybrid_command(

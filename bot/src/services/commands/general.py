@@ -1,5 +1,5 @@
 from discord.ext import commands
-from assets.embeds.help import help_group as help_embed
+from factories.help_group_factory import create_group as create_help_group
 from ui.page_view import PageView
 from discord.ext import commands
 
@@ -52,16 +52,16 @@ async def say(ctx:commands.Context, msg: str):
 # Coinflip Command : Chooses a number at random 1-2
 async def coinflip(ctx:commands.Context, format: str):
     import random
-    msg = format.format(random.choice(["heads", "tails"]))
+    msg = format.format(outcome = random.choice(["heads", "tails"]))
     if ctx.interaction is not None:
         await ctx.interaction.response.send_message(msg)
     else:
         await ctx.send(msg)
-
+        
 # Roll Command : Chooses a number at random 1-6
 async def roll(ctx:commands.Context, format: str):
     import random
-    msg = format.format(random.randint(1,6))
+    msg = format.format(outcome = random.randint(1,6))
     if ctx.interaction is not None:
         await ctx.interaction.response.send_message(msg)
     else:
@@ -72,7 +72,7 @@ async def eightBall(ctx:commands.Context, question: str, formatQuestion: str, fo
     import random
     msg = formatResponse.format(random.choice(responses))
     if ctx.interaction is not None:
-        msg = formatQuestion.format(question) + "\n" + msg
+        msg = formatQuestion.format(question=question) + "\n" + msg
         await ctx.interaction.response.send_message(msg)
     else:
         await ctx.send(msg)
@@ -96,33 +96,30 @@ async def choose(ctx:commands.Context, input: str, format: str, fallback: str, u
 
 # Help Command : Shows a list of available commands
 async def help(ctx: commands.Context, bot_prefix: str, config: dict):
-    embeds = [
-        help_embed.create(
-            bot_prefix=bot_prefix,
+    groups = [
+        create_help_group(
             desc=config["general"]["desc"],
             commands=config["general"]["commands"],
         ),
-        help_embed.create(
-            bot_prefix=bot_prefix,
+        create_help_group(
             desc=config["mod"]["desc"],
             commands=config["mod"]["commands"],
             group_prefix=config["mod"]["prefix"]
         ),
-        help_embed.create(
-            bot_prefix=bot_prefix,
+        create_help_group(
             desc=config["automod"]["desc"],
             commands=config["automod"]["commands"],
             group_prefix=config["automod"]["prefix"]
         )
     ]
     
-    view = PageView(embeds)
+    view = PageView(groups)
 
     if ctx.interaction is not None:
         await ctx.interaction.response.defer()
-        await ctx.interaction.followup.send(embed=embeds[0], view=view, ephemeral=True)
+        await ctx.interaction.followup.send(embed=groups[0].embed, view=view, ephemeral=True)
     else:
-        await ctx.send(embed=embeds[0], view=view)
+        await ctx.send(embed=groups[0].embed, view=view)
 
 
 

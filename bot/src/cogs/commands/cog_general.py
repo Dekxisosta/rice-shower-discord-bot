@@ -1,7 +1,7 @@
 from discord.ext import commands
 from config.bot_defaults import DEFAULT_PREFIX
 from datastore.static_data import config
-from core.commands import general
+from services.commands import general
 
 class General(commands.Cog):
     def __init__(self, bot):

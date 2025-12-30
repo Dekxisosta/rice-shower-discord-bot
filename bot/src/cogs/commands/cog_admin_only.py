@@ -1,5 +1,5 @@
 from discord.ext import commands
-from core.commands import admin_only
+from services.commands import admin_only
 
 class TopLevel(commands.Cog):
     def __init__(self, bot):

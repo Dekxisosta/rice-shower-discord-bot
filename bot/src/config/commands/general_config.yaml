@@ -1,8 +1,15 @@
 desc: "U-um… Rice helps with simple commands and everyday server tasks…!"
-prefix: "rs"
+more-desc: "Provides essential utilities for common server tasks and basic interactions, allowing Rice to assist efficiently."
 
 commands:
     greet: 
+        usage: "/greet or rs!greet"
+        user-perms: 
+            - view_channel
+            - send_messages
+        bot-perms:
+            - view_channel
+            - send_messages
         desc: "Rice is here to say hello…! I-I hope you're having a good day…!"
         textlines:
             - "Um… h-hello… 🌹"
@@ -37,16 +44,47 @@ commands:
             - "Hello… um… nice timing… 🌸"
     help: 
         desc: "Shows all available commands and what Rice can do…!"
-
+        usage: "/help or rs!help"
+        more-desc: "Shows detailed information about all commands Rice can execute, including usage and descriptions."
+        user-perms:
+            - view_channel
+            - send_messages
+        bot-perms:
+            - view_channel
+            - send_messages
     ping: 
         desc: "Checks Rice's response time to see if she's fast enough…!"
-        format: "P-pong! 🏓 Latency is {0}ms."
+        usage: "/ping or rs!ping"
+        more-desc: "Measures Rice's current latency and returns the response time in milliseconds."
+        user-perms:
+            - view_channel
+            - send_messages
+        bot-perms:
+            - view_channel
+            - send_messages
+        format: "P-pong! 🏓 Latency is {}ms."
+        
     info: 
+        more-desc: "Returns general information about Rice Shower, including its capabilities and current command support."
         desc: "Provides information about Rice Shower bot and her features…!"
-        text: "Rice Shower is a friendly server bot that only supports general commands for now"
-
+        usage: "/info or rs!info"
+        text: "Rice Shower is a user-friendly server bot designed to assist with everyday server tasks. She currently supports general commands, including **greetings**, **informational queries**, **dice rolls**, **coin flips**, **motivational quotes**, **message repetition**, and **random selection**. These commands allow users to interact easily with the bot and streamline common server activities."
+        user-perms:
+            - view_channel
+            - send_messages
+        bot-perms:
+            - view_channel
+            - send_messages
     quote: 
+        more-desc: "Provides a randomly selected motivational or encouraging message to support and uplift the user."
         desc: "Gives a random cute or motivational quote to cheer you up…!"
+        usage: "/quote or rs!quote"
+        user-perms:
+            - view_channel
+            - send_messages
+        bot-perms:
+            - view_channel
+            - send_messages
         textlines:
             - "Um... it's okay to go at your own pace... 🌱"
             - "Even small steps... still count... 🌾"
@@ -70,6 +108,14 @@ commands:
             - "I'll... keep cheering for you... always... 🌹"
     umaline:
         desc: "Makes Rice say a random in-game line...!"
+        more-desc: "Displays a randomly selected prewritten line or dialogue from Rice's in-game content in Uma Musume: Pretty Derby."
+        usage: "/umaline or rs!umaline"
+        user-perms:
+            - view_channel
+            - send_messages
+        bot-perms:
+            - view_channel
+            - send_messages
         textlines:
             - "🥕 Whenever I try to cross the street, the walk signal always turns red... That's why I try not to walk beside anybody else."
             - "🥕 I wonder why Maruzen invites me on drives... We even got stuck in a traffic jam last time... She's so kind..."
@@ -81,37 +127,72 @@ commands:
             - "🥕 Everyday, little by little, I'm getting closer to becoming the me I want to be... I think."
             - "🥕 Ow... Since I'm wearing this outfit, I thought I'd try walking without looking down, but I bumped my knee..."
     say: 
+        usage: "/say or rs!say"
+        more-desc: "Echoes the message typed by the user, allowing Rice to relay it exactly as entered. Say command cannot bypass filtered words"
+        usage: "/say <message> | {prefix}say <message>"
+        user-perms:
+            - view_channel
+            - send_messages
+        bot-perms:
+            - view_channel
+            - send_messages
         desc: "Makes Rice repeat whatever you tell her to say…!"
-
     roll:
+        usage: "/roll or rs!roll"
+        more-desc: "Simulates a dice roll and outputs the result as a number."
+        user-perms:
+            - view_channel
+            - send_messages
+        bot-perms:
+            - view_channel
+            - send_messages
         desc: "Makes Rice roll a die and tell you the result!"
-        format: "Rolled {0}!"
+        format: "Rolled {outcome}!"
 
     8ball:
+        usage: "/8ball <question> or rs!8ball <question>"
+        more-desc: "Provides a randomized answer to a user-submitted question, simulating a magic 8-ball response. Does not use AI"
+        user-perms:
+            - view_channel
+            - send_messages
+        bot-perms:
+            - view_channel
+            - send_messages
         desc: "Ask Rice a question, and she'll answer with her honest feelings…!"
-        format-response: "🥕Response: {0}"
-        format-question: "❓Question: {0}"
+        format-response: "🥕Response: {response}"
+        format-question: "❓Question: {question}"
         textlines:
-            # Positive
             - "Yes..!"
             - "Most likely..!"
             - "Definitely..!"
-
-            # Neutral
             - "Ask again later… I'll try to know more!"
             - "Hmm… I'm not sure yet."
             - "Cannot predict now… but I'll try!"
-
-            # Negative
             - "No, I can't guarantee that!"
             - "Very doubtful…"
             - "Don't count on it…"
     coinflip:
+        usage: "/coinflip or rs!coinflip"
+        more-desc: "Simulates a coin toss and outputs whether it landed on heads or tails."
+        user-perms:
+            - view_channel
+            - send_messages
+        bot-perms:
+            - view_channel
+            - send_messages
         desc: "Rice flips a coin and tells you the result!"
-        format: "It landed on {0}!"
+        format: "It landed on {outcome}!"
 
     choose:
+        usage: "/choose <choice1|choice2|choice3> or rs!choose <choice1,choice2,choice3>"
         desc: "Let Rice choose between multiple options for you!"
+        more-desc: "Selects one option from multiple user-provided choices and outputs the selected result.\nUser can use | or , with | being more dominant than ,"
+        user-perms:
+            - view_channel
+            - send_messages
+        bot-perms:
+            - view_channel
+            - send_messages
         usage: "!choose option 1, option 2 | option 3"
         fallback: "Um… I need at least two options to choose from!"
         format: "I think I'll pick **{0}**!"

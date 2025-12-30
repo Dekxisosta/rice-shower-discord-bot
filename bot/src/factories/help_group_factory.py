@@ -1,15 +1,7 @@
-from pathlib import Path
 import discord
+from models.help_model import HelpGroup
 
-# Path to PNG folder
-PNG_DIR = Path(__file__).parent.parent.parent / "images"
-
-def create(
-        bot_prefix:str, 
-        desc: str, 
-        commands: dict,
-        group_prefix: str | None = None, 
-        ):
+def create_group(desc: str, commands: dict,group_prefix: str | None = None):
     embed = discord.Embed(
         title="🪻 **Rice Shower Bot Commands**",
         description="Here are all the things Rice can help you with, Trainer-san!",
@@ -33,13 +25,15 @@ def create(
             continue
         if group_prefix is None:
             embed.add_field(
-                name=f"```🥕/{cmd_name} | {bot_prefix}{cmd_name}```", 
-                value=commands[cmd_name]["desc"], 
+                name = f"**/{cmd_name}**",
+                value= commands[cmd_name]["desc"], 
                 inline=True)
         else:
             embed.add_field(
-                name=f"```🥕/{group_prefix} {cmd_name} | {bot_prefix}{group_prefix} {cmd_name}```", 
+                name = f"**/{group_prefix} {cmd_name}**",
                 value=commands[cmd_name]["desc"], 
                 inline=True)
+            
+        embed.set_footer(text="For more information about a command, use the dropdown provided below")
 
-    return embed
+    return HelpGroup(embed=embed, commands=commands)

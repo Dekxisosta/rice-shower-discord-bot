@@ -1,8 +1,11 @@
-import os
+import os, logging
 from discord.ext import commands
 from utils.console_logger import log
+from config.bot_defaults import DEFAULT_PREFIX, DEFAULT_TOKEN, DEFAULT_INTENTS
+from config.directories import COMMANDS_FOLDER_PATH, EVENTS_FOLDER_PATH
 
 async def autoload_folder(bot: commands.Bot, folder_path: str, package_prefix: str):
+    
     folder_abs = os.path.abspath(folder_path)
     success_count = 0
     failed_count = 0
@@ -19,3 +22,22 @@ async def autoload_folder(bot: commands.Bot, folder_path: str, package_prefix: s
                 failed_count += 1
 
     log(f"Successfully loaded {success_count}/{(success_count+failed_count)} cogs from {package_prefix}.", module_name="AUTOLOADER", success = True)
+
+
+
+bot = commands.Bot(
+    intents=DEFAULT_INTENTS, 
+    command_prefix=DEFAULT_PREFIX,
+    help_command=None
+)
+@bot.event
+async def setup_hook():
+    await autoload_folder(bot, folder_path=COMMANDS_FOLDER_PATH, package_prefix="cogs.commands")
+    await autoload_folder(bot, folder_path=EVENTS_FOLDER_PATH, package_prefix="cogs.events")
+
+def load():
+    bot.run(
+        DEFAULT_TOKEN, #type: ignore
+        log_handler=None,
+        log_level=logging.DEBUG,
+    )

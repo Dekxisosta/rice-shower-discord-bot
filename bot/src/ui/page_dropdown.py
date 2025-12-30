@@ -15,6 +15,7 @@ class PageDropdown(discord.ui.Select):
         super().__init__(placeholder="Select a command for more information", min_values=1, max_values=1, options=options)
 
     def set_commands(self, commands: dict):
+        self.commands = commands
         self.options = [
             discord.SelectOption(
                 label=cmd_name,
@@ -28,7 +29,6 @@ class PageDropdown(discord.ui.Select):
     async def callback(self, interaction: discord.Interaction):
         selected_cmd = self.values[0]
         cmd_data = self.commands[selected_cmd]
-
         embed = create(
             cmd_name=selected_cmd,
             desc=cmd_data["desc"],

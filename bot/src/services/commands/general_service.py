@@ -1,6 +1,4 @@
 from discord.ext import commands
-from factories.help_group_factory import create_group as create_help_group
-from ui.page_view import PageView
 from discord.ext import commands
 
 # Greet Command : Randomly picks a greeting line
@@ -94,32 +92,7 @@ async def choose(ctx:commands.Context, input: str, format: str, fallback: str, u
     else:
         await ctx.send(msg)
 
-# Help Command : Shows a list of available commands
-async def help(ctx: commands.Context, bot_prefix: str, config: dict):
-    groups = [
-        create_help_group(
-            desc=config["general"]["desc"],
-            commands=config["general"]["commands"],
-        ),
-        create_help_group(
-            desc=config["mod"]["desc"],
-            commands=config["mod"]["commands"],
-            group_prefix=config["mod"]["prefix"]
-        ),
-        create_help_group(
-            desc=config["automod"]["desc"],
-            commands=config["automod"]["commands"],
-            group_prefix=config["automod"]["prefix"]
-        )
-    ]
-    
-    view = PageView(groups)
 
-    if ctx.interaction is not None:
-        await ctx.interaction.response.defer()
-        await ctx.interaction.followup.send(embed=groups[0].embed, view=view, ephemeral=True)
-    else:
-        await ctx.send(embed=groups[0].embed, view=view)
 
 
 

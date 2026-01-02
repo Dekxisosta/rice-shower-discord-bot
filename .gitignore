@@ -1,5 +1,7 @@
 #Ignore environment variables
 .env
+.venv/
+venv/
 
 #Ignore pycaches
 __pycache__/

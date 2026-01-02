@@ -29,11 +29,20 @@ Currently in early development; some package structure and features may change a
 
 
 ![What's New Banner](docs/images/whats-new_banner.png)
+
+## Discord Bot Features
+
+| Category | Description |
+|----------|-------------|
+| **General Commands** | Provides simple utility commands for everyday server tasks, fun interactions, and informational queries. Designed to be easy-to-use for both developers and users. Includes UI/UX components for an interactive experience, like buttons, menus, and embedded responses. |
+| **Moderation Commands** | Core moderation features that are actively being developed and improved, including member management, permission checks, and automated enforcement tools. Comes with UI/UX components to streamline interactions, confirmations, and status displays. |
+
+## Source Code Features
+
 | Feature | Description |
 |---------|-------------|
-| **Autoloader System** | Automatically loads commands and events from designated folders. Add new functionality simply by creating a file—no need to modify core bot code. Perfect for modular development and quick iteration. |
-| **Centralized Logging** | Key bot events—like startup, loaded modules, and command execution—are printed to the console, while all activity, including Discord’s internal logs, is written directly to a log file. This ensures important runtime information is visible immediately, while detailed logs are preserved for debugging, monitoring, and auditing. |
-| **Customizable Configuration** | Easily configure command prefixes, intents, tokens, and logging behavior via a **centralized YAML file**. Supports multiple environments with minimal changes. |
-| **Extensible Utilities** | Includes helper modules for logging, autoloading, and other common tasks, making it easy to build additional features or integrate external APIs. |
-| **Persistent User Data** | Uses **SQLite** to store user-related information, allowing commands and events to read and write persistent data efficiently, without requiring an external database server. |
-
+| **Dynamic Autoloader** | Automatically discovers and loads commands, events, and modules from your project folders. Adding new features is as simple as creating a file—no need to touch core bot code. Ideal for modular development and fast iteration. |
+| **Centralized Logging** | Important bot actions—like startup events, module loads, and command execution—appear in the console for immediate visibility. Full activity logs, including Discord internal logs, are saved to a file for detailed debugging, monitoring, and auditing. |
+| **Configurable Settings** | Easily adjust command prefixes, intents, tokens, and logging behavior through the config folder. Supports multiple environments, so you can switch settings with minimal changes. |
+| **Reusable Utilities** | Comes with helper modules for logging, autoloading, permissions tracking, message sending, and other common tasks. These utilities make building new features or integrating external APIs faster and cleaner. |
+| **Persistent User Data** | Stores user-related information in **SQLite**, enabling commands and events to read/write persistent data efficiently, without requiring an external database server. |
